@@ -14,7 +14,38 @@ This repository contains the code and released models for our paper [SimPO: Simp
   - [Citation](#citation)
 
 ## Released Models
+Below is the full list of models that we evaluate in our preprint.
 
+| models                       |                                                                                                           | AE2 LC | AE2 WR |  AH  |
+|------------------------------|-----------------------------------------------------------------------------------------------------------|:------:|:------:|:----:|
+| Mistral Base 7B SFT          | [alignment-handbook/zephyr-7b-sft-full](https://huggingface.co/alignment-handbook/zephyr-7b-sft-full)     |   8.4  |   6.2  |  1.3 |
+| Mistral Base 7B DPO (Zephyr) | [princeton-nlp/Mistral-7B-Base-SFT-DPO](https://huggingface.co/princeton-nlp/Mistral-7B-Base-SFT-DPO)     |  15.1  |  12.5  | 10.4 |
+| Mistral Base 7B IPO          | [princeton-nlp/Mistral-7B-Base-SFT-IPO](https://huggingface.co/princeton-nlp/Mistral-7B-Base-SFT-IPO)     |  11.8  |   9.4  |  7.5 |
+| Mistral Base 7B KTO          | [princeton-nlp/Mistral-7B-Base-SFT-KTO](https://huggingface.co/princeton-nlp/Mistral-7B-Base-SFT-KTO)     |  13.1  |   9.1  |  5.6 |
+| Mistral Base 7B ORPO         | [kaist-ai/mistral-orpo-beta](https://huggingface.co/kaist-ai/mistral-orpo-beta)                           |  14.7  |  12.2  |  7.0 |
+| Mistral Base 7B R-DPO        | [princeton-nlp/Mistral-7B-Base-SFT-RDPO](https://huggingface.co/princeton-nlp/Mistral-7B-Base-SFT-RDPO)   |  17.4  |  12.8  |  9.9 |
+| Mistral Base 7B SimPO        | [princeton-nlp/Mistral-7B-Base-SFT-SimPO](https://huggingface.co/princeton-nlp/Mistral-7B-Base-SFT-SimPO) |  21.4  |  20.8  | 16.6 |
+| Mistral Instruct 7B SFT      | [mistralai/Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2)           |  17.1  |  14.7  | 12.6 |
+| Mistral Instruct 7B DPO      | [princeton-nlp/Mistral-7B-Instruct-DPO](https://huggingface.co/princeton-nlp/Mistral-7B-Instruct-DPO)     |  26.8  |  24.9  | 16.3 |
+| Mistral Instruct 7B IPO      | [princeton-nlp/Mistral-7B-Instruct-IPO](https://huggingface.co/princeton-nlp/Mistral-7B-Instruct-IPO)     |  20.3  |  20.3  | 16.2 |
+| Mistral Instruct 7B KTO      | [princeton-nlp/Mistral-7B-Instruct-KTO](https://huggingface.co/princeton-nlp/Mistral-7B-Instruct-KTO)     |  24.5  |  23.6  | 17.9 |
+| Mistral Instruct 7B ORPO     | [princeton-nlp/Mistral-7B-Instruct-ORPO](https://huggingface.co/princeton-nlp/Mistral-7B-Instruct-ORPO)   |  24.5  |  24.9  | 20.8 |
+| Mistral Instruct 7B R-DPO    | [princeton-nlp/Mistral-7B-Instruct-RDPO](https://huggingface.co/princeton-nlp/Mistral-7B-Instruct-RDPO)   |  27.3  |  24.5  | 16.1 |
+| Mistral Instruct 7B SimPO    | [princeton-nlp/Mistral-7B-Instruct-SimPO](https://huggingface.co/princeton-nlp/Mistral-7B-Instruct-SimPO) |  32.1  |  34.8  | 21.0 |
+| Llama3 Base 8B SFT           | [princeton-nlp/Llama-3-Base-8B-SFT](https://huggingface.co/princeton-nlp/Llama-3-Base-8B-SFT)             |   6.2  |   4.6  |  3.3 |
+| Llama3 Base 8B DPO           | [princeton-nlp/Llama-3-Base-8B-DPO](https://huggingface.co/princeton-nlp/Llama-3-Base-8B-DPO)             |  18.2  |  15.5  | 15.9 |
+| Llama3 Base 8B IPO           | [princeton-nlp/Llama-3-Base-8B-IPO](https://huggingface.co/princeton-nlp/Llama-3-Base-8B-IPO)             |  14.4  |  14.2  | 17.8 |
+| Llama3 Base 8B KTO           | [princeton-nlp/Llama-3-Base-8B-KTO](https://huggingface.co/princeton-nlp/Llama-3-Base-8B-KTO)             |  14.2  |  12.4  | 12.5 |
+| Llama3 Base 8B ORPO          | [princeton-nlp/Llama-3-Base-8B-ORPO](https://huggingface.co/princeton-nlp/Llama-3-Base-8B-ORPO)           |  12.2  |  10.6  | 10.8 |
+| Llama3 Base 8B R-DPO         | [princeton-nlp/Llama-3-Base-8B-RDPO](https://huggingface.co/princeton-nlp/Llama-3-Base-8B-RDPO)           |  17.6  |  14.4  | 17.2 |
+| Llama3 Base 8B SimPO         | [princeton-nlp/Llama-3-Base-8B-SimPO](https://huggingface.co/princeton-nlp/Llama-3-Base-8B-SimPO)         |  22.0  |  20.3  | 23.4 |
+| Llama3 Instruct 8B SFT       | [meta-llama/Meta-Llama-3-Instruct-8B](https://huggingface.co/meta-llama/Meta-Llama-3-Instruct-8B)         |  26.0  |  25.3  | 22.3 |
+| Llama3 Instruct 8B DPO       | [princeton-nlp/Llama-3-Instruct-8B-DPO](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-DPO)     |  40.3  |  37.9  | 32.6 |
+| Llama3 Instruct 8B IPO       | [princeton-nlp/Llama-3-Instruct-8B-IPO](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-IPO)     |  35.6  |  35.6  | 30.5 |
+| Llama3 Instruct 8B KTO       | [princeton-nlp/Llama-3-Instruct-8B-KTO](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-KTO)     |  33.1  |  31.8  | 26.4 |
+| Llama3 Instruct 8B ORPO      | [princeton-nlp/Llama-3-Instruct-8B-ORPO](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-ORPO)   |  28.5  |  27.4  | 25.8 |
+| Llama3 Instruct 8B R-DPO     | [princeton-nlp/Llama-3-Instruct-8B-RDPO](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-RDPO)   |  41.1  |  37.8  | 33.1 |
+| Llama3 Instruct 8B SimPO     | [princeton-nlp/Llama-3-Instruct-8B-SimPO](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-SimPO) |  44.7  |  40.5  | 33.8 |
 
 ## Install Requirements
 
