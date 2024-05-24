@@ -47,6 +47,8 @@ Below is the full list of models that we evaluate in our preprint.
 | Llama3 Instruct 8B R-DPO     | [princeton-nlp/Llama-3-Instruct-8B-RDPO](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-RDPO)   |  41.1  |  37.8  | 33.1 |
 | Llama3 Instruct 8B SimPO     | [princeton-nlp/Llama-3-Instruct-8B-SimPO](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-SimPO) |  44.7  |  40.5  | 33.8 |
 
+Please refer to the [generate.py](generate.py) script for detailed instructions on loading the model with the appropriate chat template.
+
 ## Install Requirements
 
 Our codebase is built upon the [alignment-handbook repo](https://github.com/huggingface/alignment-handbook). The following steps will guide you through the installation process.
