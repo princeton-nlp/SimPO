@@ -11,7 +11,6 @@ class SimPOTrainer(DPOTrainer):
         super().__init__(**kwargs)  # Pass all other arguments using **kwargs
         training_args = kwargs["args"]
         self.gamma = training_args.gamma
-        super().__init__(**kwargs)
 
     def simpo_loss(
         self,
