@@ -98,7 +98,7 @@ ACCELERATE_LOG_LEVEL=info accelerate launch --config_file accelerate_configs/dee
 
 ## Evaluation
 
-We follow the official implementation for evaluation on AlpacaEval 2, Arena-Hard, and MT-Bench, as follows:
+We follow the official implementation for evaluation on AlpacaEval 2, Arena-Hard, and MT-Bench, as follows (more details can be found under [the eval directory](https://github.com/princeton-nlp/SimPO/tree/main/eval)):
 
 * AlpacaEval 2: Please refer to the [AlpacaEval repo](https://github.com/tatsu-lab/alpaca_eval) for evaluation.
 
