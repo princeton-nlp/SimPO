@@ -5,7 +5,7 @@ use_flash_attention_2: true
 
 # Data training arguments
 dataset_mixer:
-  snorkelai/Snorkel-Mistral-PairRM-DPO-Dataset: 1.0
+  princeton-nlp/mistral-instruct-ultrafeedback: 1.0
 dataset_splits:
 - train
 - test
