@@ -14,7 +14,7 @@ This repository contains the code and released models for our paper [SimPO: Simp
   - [Citation](#citation)
 
 ## Released Models
-Below is the full list of models that we evaluate in our preprint.
+Below is the complete list of models evaluated in our preprint. The following Llama3 models utilize the initial Llama3 tokenizer (before this [PR](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/commit/339ce92d052f002cdbac4a4bd551d1c61dd8345e)). We found that using the updated llama3 tokenizer with vLLM sometimes introduces two BOS tokens, potentially affecting evaluation results, particularly for Arena-Hard. Therefore, please ensure that **only one BOS token** is included in the prompt after applying the Llama3 chat template during any evaluation.
 
 | models                       |                                                                                                           | AE2 LC | AE2 WR |  AH  |
 |------------------------------|-----------------------------------------------------------------------------------------------------------|:------:|:------:|:----:|
