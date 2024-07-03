@@ -19,8 +19,8 @@ Given the various inquiries about SimPO, we provide a list of tips to help you r
 ### Hyperparameter tuning
 Hyperparameter tuning is crucial for SimPO. The three main hyperparameters to focus on are learning_rate, beta, and gamma.
 - `learning_rate`: learning_rate: The learning rate is the most critical hyperparameter for preference optimization. A large learning rate (e.g., 1e-5) can significantly degrade performance, causing the model to produce incoherent sentences or completely repetitive responses. We recommend grid searching over 3e-7, 5e-7, and 1e-6, if resources allow.
-- `beta: Beta controls the reward scaling between winning and losing responses. In our preprint, we used a small beta (e.g., 2.0 or 2.5), but researchers from Meta suggest that a larger beta (e.g., 10) could yield better results.
-- `gamma: Gamma controls the target reward margin. We suggest tuning gamma in tandem with beta, where gamma = c * beta. We recommend grid searching over 0.25, 0.3, and 0.4. A well-tuned gamma can provide a modest improvement, but it is not as critical as other hyperparameters.
+- `beta`: Beta controls the reward scaling between winning and losing responses. In our preprint, we used a small beta (e.g., 2.0 or 2.5), but researchers from Meta suggest that a larger beta (e.g., 10) could yield better results.
+- `gamma`: Gamma controls the target reward margin. We suggest tuning gamma in tandem with beta, where gamma = c * beta. We recommend grid searching over 0.25, 0.3, and 0.4. A well-tuned gamma can provide a modest improvement, but it is not as critical as other hyperparameters.
 
 We used the following hyperparameters for training the released models.
 | Setting           | β   | γ   | Learning rate |
