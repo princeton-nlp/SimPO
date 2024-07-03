@@ -6,6 +6,7 @@ This repository contains the code and released models for our paper [SimPO: Simp
 
 ## 🔗 Quick Links
 - [SimPO: Simple Preference Optimization with a Reference-Free Reward](#simple-preference-optimization-simpo)
+  - [Tips for Running SimPO](#tips-for-running-simpo)
   - [Released Models](#released-models)
   - [Install Requirements](#install-requirements)
   - [Training scripts](#training-scripts)
@@ -13,9 +14,34 @@ This repository contains the code and released models for our paper [SimPO: Simp
   - [Bugs or Questions?](#bugs-or-questions)
   - [Citation](#citation)
 
-## Released Models
-Below is the complete list of models evaluated in our preprint. The following Llama3 models utilize the initial Llama3 tokenizer (before this [PR](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/commit/339ce92d052f002cdbac4a4bd551d1c61dd8345e)). We found that using the updated llama3 tokenizer with vLLM sometimes introduces two BOS tokens, potentially affecting evaluation results, particularly for Arena-Hard. Therefore, please ensure that **only one BOS token** is included in the prompt after applying the Llama3 chat template during any evaluation.
+## Tips for Running SimPO
+Given the various inquiries about SimPO, we provide a list of tips to help you reproduce our paper results and achieve better outcomes for running SimPO on your own tasks. 
+### Hyperparameter tuning
+Hyperparameter tuning is crucial for SimPO. The three main hyperparameters to focus on are learning_rate, beta, and gamma.
+- `learning_rate`: learning_rate: The learning rate is the most critical hyperparameter for preference optimization. A large learning rate (e.g., 1e-5) can significantly degrade performance, causing the model to produce incoherent sentences or completely repetitive responses. We recommend grid searching over 3e-7, 5e-7, and 1e-6, if resources allow.
+- `beta: Beta controls the reward scaling between winning and losing responses. In our preprint, we used a small beta (e.g., 2.0 or 2.5), but researchers from Meta suggest that a larger beta (e.g., 10) could yield better results.
+- `gamma: Gamma controls the target reward margin. We suggest tuning gamma in tandem with beta, where gamma = c * beta. We recommend grid searching over 0.25, 0.3, and 0.4. A well-tuned gamma can provide a modest improvement, but it is not as critical as other hyperparameters.
 
+We used the following hyperparameters for training the released models.
+| Setting           | β   | γ   | Learning rate |
+|-------------------|-----|-----|----------------|
+| Mistral-Base      | 2.0 | 1.6 | 3e-7           |
+| Mistral-Instruct  | 2.5 | 0.3 | 5e-7           |
+| Llama3-Base       | 2.0 | 1.0 | 6e-7           |
+| Llama3-Instruct   | 2.5 | 1.4 | 1e-6           |
+
+### Training and evaluation consistency in BOS
+Our released Llama3 models use the initial version of the Llama3 tokenizer (prior to this [PR](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/commit/339ce92d052f002cdbac4a4bd551d1c61dd8345e)). We have found that the updated Llama3 tokenizer with vLLM occasionally introduces two BOS tokens, which can affect evaluation results. Therefore, please ensure that only one BOS token is included in the prompt after applying the Llama3 chat template during any evaluation.
+
+*Notably, if you are training Llama3 and evaluating the trained models on AlpacaEval 2 and Arena-Hard using the templates provided in this repo, please make sure to use the pre-update Llama3 tokenizer (i.e., the one before the PR).*
+
+
+### Adding an extra sft loss
+We have observed that, in some cases, adding an additional SFT loss can help improve results. These findings have been initially validated in the [CPO_SIMPO](https://github.com/fe1ixxu/CPO_SIMPO/tree/main)  repository. We are currently working on integrating this improvement into our main repository.
+
+
+## Released Models
+Below is the complete list of models evaluated in our preprint. 
 | models                       |                                                                                                           | AE2 LC | AE2 WR |  AH  |
 |------------------------------|-----------------------------------------------------------------------------------------------------------|:------:|:------:|:----:|
 | Mistral Base 7B SFT          | [alignment-handbook/zephyr-7b-sft-full](https://huggingface.co/alignment-handbook/zephyr-7b-sft-full)     |   8.4  |   6.2  |  1.3 |
