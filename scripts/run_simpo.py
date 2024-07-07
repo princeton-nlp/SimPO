@@ -37,19 +37,13 @@ from alignment import (
 from alignment.data import maybe_insert_system_message, is_openai_format
 from peft import PeftConfig, PeftModel
 from simpo_trainer import SimPOTrainer
+from simpo_config import SimPOConfig
 from dataclasses import dataclass, field
 from typing import Optional, Literal
 
 logger = logging.getLogger(__name__)
 
 MISTRAL_CHAT_TEMPLATE = "{% if messages[0]['role'] == 'system' %}{% set loop_messages = messages[1:] %}{% set system_message = messages[0]['content'].strip() + '\n\n' %}{% else %}{% set loop_messages = messages %}{% set system_message = '' %}{% endif %}{% for message in loop_messages %}{% if loop.index0 == 0 %}{% set content = system_message + message['content'] %}{% else %}{% set content = message['content'] %}{% endif %}{% if message['role'] == 'user' %}{{ '[INST] ' + content.strip() + ' [/INST]' }}{% elif message['role'] == 'assistant' %}{{ ' '  + content.strip() + ' ' + eos_token }}{% endif %}{% endfor %}"
-
-@dataclass
-class SimPOConfig(DPOConfig):
-    gamma: Optional[float] = field(
-        default=0.5,
-        metadata={"help": "The target reward margin term in SimPO loss."},
-    )
 
 def apply_chat_template(
     example,
@@ -251,29 +245,16 @@ def main():
     #     )
     #     model_kwargs = None
 
-    ref_model = model
-    ref_model_kwargs = model_kwargs
-
-    if model_args.use_peft is True:
-        ref_model = None
-        ref_model_kwargs = None
-
     #########################
     # Instantiate SimPO trainer
     #########################
     trainer = SimPOTrainer(
         model=model,
-        ref_model=ref_model, # pass in to bypass DPO Trainer check for ref model but is not actually used
-        model_init_kwargs=model_kwargs,
         args=training_args,
-        beta=training_args.beta,
         train_dataset=raw_datasets["train"],
         eval_dataset=raw_datasets["test"],
         tokenizer=tokenizer,
-        max_length=training_args.max_length,
-        max_prompt_length=training_args.max_prompt_length,
         peft_config=get_peft_config(model_args),
-        loss_type=training_args.loss_type,
     )
 
     ###############

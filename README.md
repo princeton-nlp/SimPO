@@ -17,18 +17,18 @@ This repository contains the code and released models for our paper [SimPO: Simp
 ## Tips for Running SimPO
 Given the various inquiries about SimPO, we provide a list of tips to help you reproduce our paper results and achieve better outcomes for running SimPO on your own tasks. 
 ### Hyperparameter tuning
-Hyperparameter tuning is crucial for SimPO. The three main hyperparameters to focus on are learning_rate, beta, and gamma.
-- `learning_rate`: learning_rate: The learning rate is the most critical hyperparameter for preference optimization. A large learning rate (e.g., 1e-5) can significantly degrade performance, causing the model to produce incoherent sentences or completely repetitive responses. We recommend grid searching over 3e-7, 5e-7, and 1e-6, if resources allow.
-- `beta`: Beta controls the reward scaling between winning and losing responses. In our preprint, we used a small beta (e.g., 2.0 or 2.5), but researchers from Meta suggest that a larger beta (e.g., 10) could yield better results.
-- `gamma`: Gamma controls the target reward margin. We suggest tuning gamma in tandem with beta, where gamma = c * beta. We recommend grid searching over 0.25, 0.3, and 0.4. A well-tuned gamma can provide a modest improvement, but it is not as critical as other hyperparameters.
+Hyperparameter tuning is crucial for SimPO (and other preference optimization algorithms in general). The three main hyperparameters of SimPO to focus on are `learning_rate`, `beta`, and `gamma`.
+- `learning_rate`: It is the most critical hyperparameter for preference optimization. A large learning rate (e.g., 1e-5) can significantly degrade performance, causing the model to produce incoherent sentences or completely repetitive responses. We recommend grid searching over 3e-7, 5e-7, and 1e-6, if resources allow.
+- `beta`: Beta controls the reward scaling between winning and losing responses. SimPO requires a much larger `beta` than DPO. In our preprint, we used a beta of `2.0` or `2.5`, but in many cases, an even larger beta (e.g., `10`) could yield better results.
+- `gamma`: Gamma controls the target reward margin. We suggest tuning the ratio of gamma to beta (i.e., `gamma / beta`). We recommend using `0.5` as a starting point for `gamma_beta_ratio` and grid searching between `0` and `1`. A well-tuned `gamma_beta_ratio` can provide a modest improvement, but it is not as critical as other hyperparameters.
 
-We used the following hyperparameters for training the released models.
-| Setting           | β   | γ   | Learning rate |
+We used the following hyperparameters for training the released models (note that in our latest update, we changed the hyperparameter `gamma` to `gamma_beta_ratio` as the latter is normalized and easier to tune under different `beta` values).
+| Setting           | β   | γ/β   | Learning rate |
 |-------------------|-----|-----|----------------|
-| Mistral-Base      | 2.0 | 1.6 | 3e-7           |
-| Mistral-Instruct  | 2.5 | 0.3 | 5e-7           |
-| Llama3-Base       | 2.0 | 1.0 | 6e-7           |
-| Llama3-Instruct   | 2.5 | 1.4 | 1e-6           |
+| Mistral-Base      | 2.0 | 0.8 | 3e-7           |
+| Mistral-Instruct  | 2.5 | 0.1 | 5e-7           |
+| Llama3-Base       | 2.0 | 0.5 | 6e-7           |
+| Llama3-Instruct   | 2.5 | 0.55 | 1e-6           |
 
 ### Training and evaluation consistency in BOS
 Our released Llama3 models use the initial version of the Llama3 tokenizer (prior to this [PR](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/commit/339ce92d052f002cdbac4a4bd551d1c61dd8345e)). We have found that the updated Llama3 tokenizer with vLLM occasionally introduces two BOS tokens, which can affect evaluation results. Therefore, please ensure that only one BOS token is included in the prompt after applying the Llama3 chat template during any evaluation.
