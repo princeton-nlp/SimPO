@@ -14,7 +14,7 @@ preprocessing_num_workers: 12
 # SimPOTrainer arguments
 bf16: true
 beta: 2.5
-gamma: 1.4
+gamma_beta_ratio: 0.55
 do_eval: true
 evaluation_strategy: steps
 eval_steps: 400

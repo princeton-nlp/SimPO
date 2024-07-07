@@ -3,7 +3,7 @@ from transformers import pipeline
 import json
 import warnings
 
-model_id = "princeton-nlp/Llama-3-Instruct-8B-SimPO"
+model_id = "/scratch/gpfs/DANQIC/ym0081/SimPO/outputs/llama-3-8b-instruct-simpo"
 
 with open('chat_templates.json', 'r') as f:
     chat_templates = json.load(f)
@@ -24,5 +24,5 @@ generator = pipeline(
     device="cuda",
 )
 generator.tokenizer.chat_template = template
-outputs = generator([{"role": "user", "content": "What's the difference between llamas and alpacas?"}], do_sample=False, max_new_tokens=200)
+outputs = generator([{"role": "user", "content": "When rolling two dice, what is the probability that you roll a total number that is at least 3?"}], do_sample=False, max_new_tokens=200)
 print(outputs[0]['generated_text'])
