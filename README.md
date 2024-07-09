@@ -29,15 +29,16 @@ We used the following hyperparameters for training the released models (note tha
 | Mistral-Instruct  | 2.5 | 0.1 | 5e-7           |
 | Llama3-Base       | 2.0 | 0.5 | 6e-7           |
 | Llama3-Instruct   | 2.5 | 0.55 | 1e-6           |
+| Llama3-Instruct v0.2   | 10 | 0.3 | 1e-6           |
 
 For DPO, we use the following hyperparameters for training.
 | Setting                  | β | Learning Rate |
 |------------------------|------|---------------|
-| mistral-base           | 0.01 | 5e-7      |
-| mistral-instruct       | 0.01 | 2e-7      |
-| llama3-base            | 0.01 | 5e-7      |
-| llama3-instruct        | 0.01 | 7e-7      |
-| llama3-instruct v0.2   | 0.01 | 3e-7      |
+| Mistral-Base           | 0.01 | 5e-7      |
+| Mistral-Instruct       | 0.01 | 2e-7      |
+| Llama3-Base            | 0.01 | 5e-7      |
+| Llama3-Instruct        | 0.01 | 7e-7      |
+| Llama3-Instruct v0.2   | 0.01 | 3e-7      |
 
 
 ### Training and evaluation consistency in BOS
