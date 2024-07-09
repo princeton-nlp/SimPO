@@ -194,6 +194,7 @@ Please cite our paper if you find the repo helpful in your work:
 @article{meng2024simpo,
   title={{SimPO}: Simple Preference Optimization with a Reference-Free Reward},
   author={Meng, Yu and Xia, Mengzhou and Chen, Danqi},
+  journal={arXiv preprint arXiv:2405.14734},
   year={2024}
 }
 ```
