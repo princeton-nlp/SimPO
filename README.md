@@ -144,7 +144,7 @@ python -m pip install flash-attn --no-build-isolation
 
 ## Training Scripts
 
-We provide four training config files for the four training setups reported in our paper. The training config is set for 8xH100 GPUs. You may need to adjust `num_processes` and `per_device_train_batch_size` based on your computation environment. 
+We provide four training config files for the four training setups reported in our paper. The training config is set for 4xH100 GPUs. You may need to adjust `num_processes` and `per_device_train_batch_size` based on your computation environment. 
 
 * Mistral-Base:
 ```shell
@@ -161,6 +161,10 @@ ACCELERATE_LOG_LEVEL=info accelerate launch --config_file accelerate_configs/dee
 * Llama3-Instruct:
 ```shell
 ACCELERATE_LOG_LEVEL=info accelerate launch --config_file accelerate_configs/deepspeed_zero3.yaml scripts/run_simpo.py training_configs/llama-3-8b-instruct-simpo.yaml
+```
+* Llama3-Instruct v0.2:
+```shell
+ACCELERATE_LOG_LEVEL=info accelerate launch --config_file accelerate_configs/deepspeed_zero3.yaml scripts/run_simpo.py training_configs/llama-3-8b-instruct-simpo-v2.yaml
 ```
 
 ## Evaluation
