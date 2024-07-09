@@ -42,7 +42,7 @@ For DPO, we use the following hyperparameters for training.
 | Setting                  | β | Learning Rate |
 |------------------------|------|---------------|
 | Mistral-Base           | 0.01 | 5e-7      |
-| Mistral-Instruct       | 0.01 | 2e-7      |
+| Mistral-Instruct       | 0.01 | 5e-7      |
 | Llama3-Base            | 0.01 | 5e-7      |
 | Llama3-Instruct        | 0.01 | 7e-7      |
 | Llama3-Instruct v0.2   | 0.01 | 3e-7      |
