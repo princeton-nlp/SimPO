@@ -100,7 +100,6 @@ We found that using a strong reward model for annotating preference optimization
 | Llama 3 Instruct 8B KTO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-KTO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-KTO-v0.2) |  34.1  |  36.4  | 30.9 |
 | Llama 3 Instruct 8B ORPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-ORPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-ORPO-v0.2) |  34.1  |  32.1  | 27.3 |
 | Llama 3 Instruct 8B R-DPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-RDPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-RDPO-v0.2) |  38.1  |  33.8  | 28.2 |
-| Llama 3 Instruct 8B SimPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-SimPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-SimPO-v0.2) |  48.0  |  45.8  | 35.1 |
 | Llama 3 Instruct 8B SimPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-SimPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-SimPO-v0.2) |  53.7  |  47.5  | 36.5 |
 
 ### Use our models for inference
