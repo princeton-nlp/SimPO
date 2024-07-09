@@ -30,6 +30,16 @@ We used the following hyperparameters for training the released models (note tha
 | Llama3-Base       | 2.0 | 0.5 | 6e-7           |
 | Llama3-Instruct   | 2.5 | 0.55 | 1e-6           |
 
+For DPO, we use the following hyperparameters for training.
+| Setting                  | β | Learning Rate |
+|------------------------|------|---------------|
+| mistral-base           | 0.01 | 5e-7      |
+| mistral-instruct       | 0.01 | 2e-7      |
+| llama3-base            | 0.01 | 5e-7      |
+| llama3-instruct        | 0.01 | 7e-7      |
+| llama3-instruct v0.2   | 0.01 | 3e-7      |
+
+
 ### Training and evaluation consistency in BOS
 Our released Llama3 models use the initial version of the Llama3 tokenizer (prior to this [PR](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/commit/339ce92d052f002cdbac4a4bd551d1c61dd8345e)). We have found that the updated Llama3 tokenizer with vLLM occasionally introduces two BOS tokens, which can affect evaluation results. Therefore, please ensure that only one BOS token is included in the prompt after applying the Llama3 chat template during any evaluation.
 
