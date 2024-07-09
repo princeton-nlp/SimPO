@@ -7,7 +7,7 @@ This repository contains the code and released models for our paper [SimPO: Simp
 ## 🆕 Changelog 
 - [2024.07.08] We updated our paper ([v2](https://arxiv.org/abs/2405.14734v2))
   - Additional baselines (RRHF, SLiC-HF, CPO) 
-  - New Llama3-Instruct setting (v0.2) with [ArmoRM](https://huggingface.co/RLHFlow/ArmoRM-Llama3-8B-v0.1) as the preference label annotator, yielding better-performing models ([training script](https://github.com/princeton-nlp/SimPO/blob/main/training_configs/llama-3-8b-instruct-simpo-v2.yaml))!
+  - New Llama3-Instruct setting (v0.2) with [ArmoRM](https://huggingface.co/RLHFlow/ArmoRM-Llama3-8B-v0.1) as the preference label annotator, yielding a better-performing model, [Llama-3-Instruct-8B-SimPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-SimPO-v0.2), with a **53.7** LC win rate on AlpacaEval 2 and a **36.5** win rate on Arena-Hard ([training script](https://github.com/princeton-nlp/SimPO/blob/main/training_configs/llama-3-8b-instruct-simpo-v2.yaml))!
   - [SimPO trainer](https://github.com/princeton-nlp/SimPO/blob/main/scripts/simpo_trainer.py) update for better reproducibility. The hyperparameter `gamma` changed to `gamma_beta_ratio` for easier tuning.
 
 ## 🔗 Quick Links
