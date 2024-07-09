@@ -31,8 +31,8 @@ max_length: 2048
 max_prompt_length: 1800
 num_train_epochs: 1
 optim: adamw_torch
-output_dir: outputs/llama-3-8b-instruct-simpo
-run_name: llama-3-8b-instruct-simpo
+output_dir: outputs/llama-3-8b-instruct-simpo-v2
+run_name: llama-3-8b-instruct-simpo-v2
 per_device_train_batch_size: 2
 per_device_eval_batch_size: 4
 push_to_hub: false
