@@ -38,7 +38,7 @@ We used the following hyperparameters for training the released models (note tha
 | Llama3-Instruct   | 2.5 | 0.55 | 1e-6           |
 | Llama3-Instruct v0.2   | 10 | 0.3 | 1e-6           |
 
-For DPO, we use the following hyperparameters for training.
+For DPO, the best hyperparameters for each setting are as follows.
 | Setting                  | β | Learning Rate |
 |------------------------|------|---------------|
 | Mistral-Base           | 0.01 | 5e-7      |
