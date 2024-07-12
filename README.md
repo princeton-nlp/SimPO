@@ -23,6 +23,10 @@ This repository contains the code and released models for our paper [SimPO: Simp
 
 ## Tips for Running SimPO
 Given the various inquiries about SimPO, we provide a list of tips to help you reproduce our paper results and achieve better outcomes for running SimPO on your own tasks. 
+
+### Environment
+We provide an [environment file](https://github.com/princeton-nlp/SimPO/blob/main/environment.yml) including the python package versions we used in our experiments. For optimal reproducibility, we recommend using the same package versions. However, please note that results may still vary due to differences in hardware configurations and CUDA versions, etc.
+
 ### Hyperparameter tuning
 Hyperparameter tuning is crucial for SimPO (and other preference optimization algorithms in general). The three main hyperparameters of SimPO to focus on are `learning_rate`, `beta`, and `gamma`.
 - `learning_rate`: It is the most critical hyperparameter for preference optimization. A large learning rate (e.g., 1e-5) can significantly degrade performance, causing the model to produce incoherent sentences or completely repetitive responses. We recommend grid searching over 3e-7, 5e-7, and 1e-6, if resources allow.
@@ -54,8 +58,8 @@ Our released Llama3 models use the initial version of the Llama3 tokenizer (prio
 *Notably, if you are training Llama3 and evaluating the trained models on AlpacaEval 2 and Arena-Hard using the templates provided in this repo, please make sure to use the pre-update Llama3 tokenizer (i.e., the one before the PR).*
 
 
-### Adding an extra sft loss
-We have observed that, in some cases, adding an additional SFT loss can help improve results. These findings have been initially validated in the [CPO_SIMPO](https://github.com/fe1ixxu/CPO_SIMPO/tree/main)  repository. We are currently working on integrating this improvement into our main repository.
+### Adding an extra SFT loss
+The [CPO_SIMPO](https://github.com/fe1ixxu/CPO_SIMPO/tree/main) repository did preliminary experiments and observed that in some cases, adding an additional SFT loss can help improve results. In our own experiments, the SFT regularization helps preserve the reasoning ability (e.g., GSM8K) but degrades chat performance. If you'd like to apply SFT regularization, you can set `sft_weight` to be a positive value (by default it's 0).
 
 
 ## Released Models
