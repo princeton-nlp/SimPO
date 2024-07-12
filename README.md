@@ -38,11 +38,11 @@ We used the following hyperparameters for training the released models (note tha
 | Llama3-Instruct   | 2.5 | 0.55 | 1e-6           |
 | Llama3-Instruct v0.2   | 10 | 0.3 | 1e-6           |
 
-For DPO, we use the following hyperparameters for training.
+For DPO, the best hyperparameters for each setting are as follows.
 | Setting                  | β | Learning Rate |
 |------------------------|------|---------------|
 | Mistral-Base           | 0.01 | 5e-7      |
-| Mistral-Instruct       | 0.01 | 2e-7      |
+| Mistral-Instruct       | 0.01 | 5e-7      |
 | Llama3-Base            | 0.01 | 5e-7      |
 | Llama3-Instruct        | 0.01 | 7e-7      |
 | Llama3-Instruct v0.2   | 0.01 | 3e-7      |
@@ -60,7 +60,7 @@ We have observed that, in some cases, adding an additional SFT loss can help imp
 
 ## Released Models
 ### v0.1
-Below is the complete list of models evaluated in our preprint. We used the [HuggingFaceH4/ultrafeedback_binarized](https://huggingface.co/datasets/HuggingFaceH4/ultrafeedback_binarized) dataset to train the Mistral Base and Llama3 Base models, the [princeton-nlp/mistral-instruct-ultrafeedback](https://huggingface.co/princeton-nlp/mistral-instruct-ultrafeedback) dataset to train the Mistral Instruct models, and the [princeton-nlp/llama3-ultrafeedback](https://huggingface.co/princeton-nlp/llama3-ultrafeedback) dataset to train the Llama3 Instruct models. The latter two datasets are annotated by the [llm-blender/PairRM](https://huggingface.co/llm-blender/PairRM) model.
+Below is the complete list of models evaluated in our preprint. We used the [HuggingFaceH4/ultrafeedback_binarized](https://huggingface.co/datasets/HuggingFaceH4/ultrafeedback_binarized) dataset to train the Mistral Base and Llama3 Base models, the [princeton-nlp/mistral-instruct-ultrafeedback](https://huggingface.co/datasets/princeton-nlp/mistral-instruct-ultrafeedback) dataset to train the Mistral Instruct models, and the [princeton-nlp/llama3-ultrafeedback](https://huggingface.co/datasets/princeton-nlp/llama3-ultrafeedback) dataset to train the Llama3 Instruct models. The latter two datasets are annotated by the [llm-blender/PairRM](https://huggingface.co/llm-blender/PairRM) model.
 
 models                       |                                                                                                           | AE2 LC | AE2 WR |  AH  |
 |------------------------------|-----------------------------------------------------------------------------------------------------------|:------:|:------:|:----:|
@@ -194,6 +194,7 @@ Please cite our paper if you find the repo helpful in your work:
 @article{meng2024simpo,
   title={{SimPO}: Simple Preference Optimization with a Reference-Free Reward},
   author={Meng, Yu and Xia, Mengzhou and Chen, Danqi},
+  journal={arXiv preprint arXiv:2405.14734},
   year={2024}
 }
 ```
