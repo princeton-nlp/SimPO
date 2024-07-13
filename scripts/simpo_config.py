@@ -68,3 +68,5 @@ class SimPOConfig(TrainingArguments):
     model_init_kwargs: Optional[Dict] = None
 
     dataset_num_proc: Optional[int] = None
+
+    attn_implementation: str = None

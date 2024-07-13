@@ -1,7 +1,7 @@
 # Model arguments
 model_name_or_path: meta-llama/Meta-Llama-3-8B-Instruct
 torch_dtype: null
-use_flash_attention_2: true
+attn_implementation: flash_attention_2
 
 # Data training arguments
 dataset_mixer:

@@ -218,6 +218,7 @@ def main():
         use_cache=False if training_args.gradient_checkpointing else True,
         device_map=get_kbit_device_map() if quantization_config is not None else None,
         quantization_config=quantization_config,
+        attn_implementation=training_args.attn_implementation,
     )
 
     model = model_args.model_name_or_path
@@ -245,6 +246,7 @@ def main():
     #     )
     #     model_kwargs = None
 
+    training_args.model_init_kwargs = model_kwargs
     #########################
     # Instantiate SimPO trainer
     #########################
