@@ -69,13 +69,13 @@ The [CPO_SIMPO](https://github.com/fe1ixxu/CPO_SIMPO/tree/main) repository did p
 ## Released Models
 
 ### Gemma  
-We release the following two models that are built on top of the strong [google/gemma-2-9b-it](https://huggingface.co/google/gemma-2-9b-it) model by training DPO and SimPO on the on-policy dataset [princeton-nlp/gemma2-ultrafeedback-armorm](https://huggingface.co/datasets/princeton-nlp/gemma2-ultrafeedback-armorm). For GSM and MMLU, we use the [EvalZero](https://github.com/yuchenlin/ZeroEval) reporistory which aims to evaluate instruction-tuned LLMs (i.e., chat models instead of base models) for their zero-shot performance on reasoning and knowledge heavy tasks. More results on [WildBench](https://huggingface.co/spaces/allenai/WildBench) are coming soon. 
+We release the following two models that are built on top of the strong [google/gemma-2-9b-it](https://huggingface.co/google/gemma-2-9b-it) model by training DPO and SimPO on the on-policy dataset [princeton-nlp/gemma2-ultrafeedback-armorm](https://huggingface.co/datasets/princeton-nlp/gemma2-ultrafeedback-armorm). For GSM and MMLU, we use the [EvalZero](https://github.com/yuchenlin/ZeroEval) repository which aims to evaluate instruction-tuned LLMs (i.e., chat models instead of base models) for their zero-shot performance on reasoning and knowledge heavy tasks. More results on [WildBench](https://huggingface.co/spaces/allenai/WildBench) are coming soon. 
 
 |               models                    | AE2 LC | AE2 WR | AE2 Length |  AH  | AH Length |  GSM | GSM Length | MMLU | MMLU Length |
 |-----------------------------------|:------:|:------:|:----------:|:----:|:---------:|:----:|:----------:|:----:|:-----------:|
 |        [google/gemma-2-9b-it](https://huggingface.co/google/gemma-2-9b-it)       |  51.1  |  38.1  |    1571    | 40.8 |    545    | 87.4 |     395    | 72.7 |     515     |
-|  [princeton-nlp/gemma-2-9b-it-DPO](https://huggingface.co/princeton-nlp/gemma-2-9b-it-DPO)  |  69.6  |  67.2  |    2016    | 58.9 |    717    | 88.5 |     392    | 72.2 |     624     |
-| [princeton-nlp/gemma-2-9b-it-SimPO](https://huggingface.co/princeton-nlp/gemma-2-9b-it-SimPO) |  73.2  |  66.7  |    1833    | 59.1 |    693    | 88.0 |     341    | 72.2 |     441     |
+|  [princeton-nlp/gemma-2-9b-it-DPO](https://huggingface.co/princeton-nlp/gemma-2-9b-it-DPO)  |  67.8  |  65.4  |    2016    | 58.9 |    717    | 88.5 |     392    | 72.2 |     624     |
+| [princeton-nlp/gemma-2-9b-it-SimPO](https://huggingface.co/princeton-nlp/gemma-2-9b-it-SimPO) |  72.4  |  65.9  |    1833    | 59.1 |    693    | 88.0 |     341    | 72.2 |     441     |
 
 Compared to the llama3 models, we found that the gemma models exhibit significantly less catastrophic forgetting on math tasks (e.g., GSM) and MMLU, despite the ultrafeedback dataset having limited math-related data. This demonstrates that the [google/gemma-2-9b-it](https://huggingface.co/google/gemma-2-9b-it) model is more suitable for continued preference optimization.
 
