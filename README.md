@@ -65,8 +65,20 @@ The [CPO_SIMPO](https://github.com/fe1ixxu/CPO_SIMPO/tree/main) repository did p
 
 
 ## Released Models
+
+<!--- ### Gemma  
+We release the following two models that are built on top of the strong [google/gemma-2-9b-it](https://huggingface.co/google/gemma-2-9b-it) model. 
+
+| models                                                                                                           | AE2 LC | AE2 WR |  AH  |
+|-----------------------------------------------------------------------------------------------------------|:------:|:------:|:----:|
+| [princeton-nlp/gemma-2-9b-it-DPO](https://huggingface.co/princeton-nlp/gemma-2-9b-it-DPO) |  37.9  |  31.6  | 28.8 |
+| [princeton-nlp/gemma-2-9b-it-SimPO](https://huggingface.co/princeton-nlp/gemma-2-9b-it-SimPO) |  33.9  |  32.5  | 29.3 | -->
+
+
 ### v0.2
-We found that using a strong reward model for annotating preference optimization datasets is crucial. In this iteration, we have reannotated the dataset [princeton-nlp/llama3-ultrafeedback-armorm](https://huggingface.co/datasets/princeton-nlp/llama3-ultrafeedback-armorm) using a more powerful reward model, [RLHFlow/ArmoRM-Llama3-8B-v0.1](https://huggingface.co/RLHFlow/ArmoRM-Llama3-8B-v0.1). As a result, the v0.2 models demonstrate significantly improved performance compared to the v0.1 models.
+We found that using a strong reward model for annotating preference optimization datasets is crucial. In this iteration, we have reannotated the dataset [princeton-nlp/llama3-ultrafeedback-armorm](https://huggingface.co/datasets/princeton-nlp/llama3-ultrafeedback-armorm) using a more powerful reward model, [RLHFlow/ArmoRM-Llama3-8B-v0.1](https://huggingface.co/RLHFlow/ArmoRM-Llama3-8B-v0.1). As a result, the v0.2 models demonstrate significantly improved performance compared to the v0.1 models. 
+
+**Caveat**: We have observed that the SimPO v0.2 model often struggles with generating outputs that require adherence to specific structures, such as json. This issue arises from a combination of factors: the llama3-instruct model's tendency to forget and the large learning rate (e.g., 1e-6) used during training, which causes deviation from the original model. To address this, we developed SimPO models based on the [google/gemma-2-9b-it](https://huggingface.co/google/gemma-2-9b-it). We found that changing the initial model significantly mitigates the forgetting issue and reduces the impact of the learning rate.
 
 | models                       |                                                                                                           | AE2 LC | AE2 WR |  AH  |
 |------------------------------|-----------------------------------------------------------------------------------------------------------|:------:|:------:|:----:|
