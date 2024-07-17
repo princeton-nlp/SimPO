@@ -5,6 +5,7 @@ This repository contains the code and released models for our paper [SimPO: Simp
 <img src="./SimPO.png" width="1000px"></img>
 
 ## 🆕 Changelog 
+- [2024.07.17] We release a new SimPO model [gemma-2-9b-it-SimPO](https://huggingface.co/princeton-nlp/gemma-2-9b-it-SimPO) by fine-tuning Google's gemma-2 9B model using on-policy UltraFeedback data annotated by [ArmoRM](https://huggingface.co/RLHFlow/ArmoRM-Llama3-8B-v0.1), with a **72.4** LC win rate on AlpacaEval 2 (**#1 on the Leaderboard**🎉🎉) and a **59.1** win rate on Arena-Hard ([training script](https://github.com/princeton-nlp/SimPO/blob/main/training_configs/gemma-2-9b-it-simpo.yaml))!
 - [2024.07.08] We updated our paper ([v2](https://arxiv.org/abs/2405.14734v2))
   - Additional baselines (RRHF, SLiC-HF, CPO) 
   - New Llama3-Instruct setting (v0.2) with [ArmoRM](https://huggingface.co/RLHFlow/ArmoRM-Llama3-8B-v0.1) as the preference label annotator, yielding a better-performing model, [Llama-3-Instruct-8B-SimPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-SimPO-v0.2), with a **53.7** LC win rate on AlpacaEval 2 and a **36.5** win rate on Arena-Hard ([training script](https://github.com/princeton-nlp/SimPO/blob/main/training_configs/llama-3-8b-instruct-simpo-v2.yaml))!
