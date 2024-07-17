@@ -65,6 +65,21 @@ The [CPO_SIMPO](https://github.com/fe1ixxu/CPO_SIMPO/tree/main) repository did p
 
 
 ## Released Models
+### v0.2
+We found that using a strong reward model for annotating preference optimization datasets is crucial. In this iteration, we have reannotated the dataset [princeton-nlp/llama3-ultrafeedback-armorm](https://huggingface.co/datasets/princeton-nlp/llama3-ultrafeedback-armorm) using a more powerful reward model, [RLHFlow/ArmoRM-Llama3-8B-v0.1](https://huggingface.co/RLHFlow/ArmoRM-Llama3-8B-v0.1). As a result, the v0.2 models demonstrate significantly improved performance compared to the v0.1 models.
+
+| models                       |                                                                                                           | AE2 LC | AE2 WR |  AH  |
+|------------------------------|-----------------------------------------------------------------------------------------------------------|:------:|:------:|:----:|
+| Llama 3 Instruct 8B RRHF v0.2 | [princeton-nlp/Llama-3-Instruct-8B-RRHF-v2.0](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-RRHF-v0.2) |  37.9  |  31.6  | 28.8 |
+| Llama 3 Instruct 8B SLiC-HF v0.2 | [princeton-nlp/Llama-3-Instruct-8B-SLiC-HF-v2.0](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-SLiC-HF-v0.2) |  33.9  |  32.5  | 29.3 |
+| Llama 3 Instruct 8B DPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-DPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-DPO-v0.2) |  48.2  |  47.5  | 35.2 |
+| Llama 3 Instruct 8B IPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-IPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-IPO-v0.2) |  46.8  |  42.4  | 36.6 |
+| Llama 3 Instruct 8B CPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-CPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-CPO-v0.2) |  34.1  |  36.4  | 30.9 |
+| Llama 3 Instruct 8B KTO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-KTO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-KTO-v0.2) |  34.1  |  32.1  | 27.3 |
+| Llama 3 Instruct 8B ORPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-ORPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-ORPO-v0.2) |  38.1  |  33.8  | 28.2 |
+| Llama 3 Instruct 8B R-DPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-RDPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-RDPO-v0.2) |  48.0  | 45.8  | 35.1 |
+| Llama 3 Instruct 8B SimPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-SimPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-SimPO-v0.2) |  53.7  |  47.5  | 36.5 |
+
 ### v0.1
 Below is the complete list of models evaluated in our preprint. We used the [HuggingFaceH4/ultrafeedback_binarized](https://huggingface.co/datasets/HuggingFaceH4/ultrafeedback_binarized) dataset to train the Mistral Base and Llama3 Base models, the [princeton-nlp/mistral-instruct-ultrafeedback](https://huggingface.co/datasets/princeton-nlp/mistral-instruct-ultrafeedback) dataset to train the Mistral Instruct models, and the [princeton-nlp/llama3-ultrafeedback](https://huggingface.co/datasets/princeton-nlp/llama3-ultrafeedback) dataset to train the Llama3 Instruct models. The latter two datasets are annotated by the [llm-blender/PairRM](https://huggingface.co/llm-blender/PairRM) model.
 
@@ -111,20 +126,6 @@ models                       |                                                  
 | Llama3 Instruct 8B R-DPO     | [princeton-nlp/Llama-3-Instruct-8B-RDPO](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-RDPO)   |  41.1  |  37.8  | 33.1 |
 | Llama3 Instruct 8B SimPO     | [princeton-nlp/Llama-3-Instruct-8B-SimPO](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-SimPO) |  44.7  |  40.5  | 33.8 |
 
-### v0.2
-We found that using a strong reward model for annotating preference optimization datasets is crucial. In this iteration, we have reannotated the dataset [princeton-nlp/llama3-ultrafeedback-armorm](https://huggingface.co/datasets/princeton-nlp/llama3-ultrafeedback-armorm) using a more powerful reward model, [RLHFlow/ArmoRM-Llama3-8B-v0.1](https://huggingface.co/RLHFlow/ArmoRM-Llama3-8B-v0.1). As a result, the v0.2 models demonstrate significantly improved performance compared to the v0.1 models.
-
-| models                       |                                                                                                           | AE2 LC | AE2 WR |  AH  |
-|------------------------------|-----------------------------------------------------------------------------------------------------------|:------:|:------:|:----:|
-| Llama 3 Instruct 8B RRHF v0.2 | [princeton-nlp/Llama-3-Instruct-8B-RRHF-v2.0](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-RRHF-v0.2) |  37.9  |  31.6  | 28.8 |
-| Llama 3 Instruct 8B SLiC-HF v0.2 | [princeton-nlp/Llama-3-Instruct-8B-SLiC-HF-v2.0](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-SLiC-HF-v0.2) |  33.9  |  32.5  | 29.3 |
-| Llama 3 Instruct 8B DPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-DPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-DPO-v0.2) |  48.2  |  47.5  | 35.2 |
-| Llama 3 Instruct 8B IPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-IPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-IPO-v0.2) |  46.8  |  42.4  | 36.6 |
-| Llama 3 Instruct 8B CPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-CPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-CPO-v0.2) |  34.1  |  36.4  | 30.9 |
-| Llama 3 Instruct 8B KTO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-KTO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-KTO-v0.2) |  34.1  |  32.1  | 27.3 |
-| Llama 3 Instruct 8B ORPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-ORPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-ORPO-v0.2) |  38.1  |  33.8  | 28.2 |
-| Llama 3 Instruct 8B R-DPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-RDPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-RDPO-v0.2) |  48.0  | 45.8  | 35.1 |
-| Llama 3 Instruct 8B SimPO v0.2 | [princeton-nlp/Llama-3-Instruct-8B-SimPO-v0.2](https://huggingface.co/princeton-nlp/Llama-3-Instruct-8B-SimPO-v0.2) |  53.7  |  47.5  | 36.5 |
 
 ### Use our models for inference
 Please refer to the [generate.py](generate.py) script for detailed instructions on loading the model with the appropriate chat template.
