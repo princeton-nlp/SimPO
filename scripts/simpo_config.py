@@ -69,4 +69,3 @@ class SimPOConfig(TrainingArguments):
 
     dataset_num_proc: Optional[int] = None
 
-    attn_implementation: str = None
