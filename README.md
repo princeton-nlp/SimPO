@@ -61,7 +61,7 @@ Our released Llama3 models use the initial version of the Llama3 tokenizer (prio
 *Notably, if you are training Llama3 and evaluating the trained models on AlpacaEval 2 and Arena-Hard using the templates provided in this repo, please make sure to use the pre-update Llama3 tokenizer (i.e., the one before the PR).*
 
 ### Reproducing AlpacaEval 2 numbers
-Please make sure that you use `alpaca-eval==0.6.2` for successfully reproducing AlpacaEval 2 results. 
+Please make sure that you use `alpaca-eval==0.6.2` and [model configurations](https://github.com/princeton-nlp/SimPO/tree/main/eval/alpacaeval2/configs) in our repo for successfully reproducing AlpacaEval 2 results. AlpacaEval has a major revision for vllm decoding since `0.6.3` and causes a discrepancy from our experiments. 
 
 ### Adding an extra SFT loss
 The [CPO_SIMPO](https://github.com/fe1ixxu/CPO_SIMPO/tree/main) repository did preliminary experiments and observed that in some cases, adding an additional SFT loss can help improve results. In our own experiments, the SFT regularization helps preserve the reasoning ability (e.g., GSM8K) but degrades chat performance. If you'd like to apply SFT regularization, you can set `sft_weight` to be a positive value (by default it's 0).
