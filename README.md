@@ -70,7 +70,7 @@ The [CPO_SIMPO](https://github.com/fe1ixxu/CPO_SIMPO/tree/main) repository did p
 ## Released Models
 
 ### Gemma  
-We release the following two models that are built on top of the strong [google/gemma-2-9b-it](https://huggingface.co/google/gemma-2-9b-it) model by training DPO and SimPO on the on-policy dataset [princeton-nlp/gemma2-ultrafeedback-armorm](https://huggingface.co/datasets/princeton-nlp/gemma2-ultrafeedback-armorm). For GSM and MMLU, we use the [EvalZero](https://github.com/yuchenlin/ZeroEval) repository which aims to evaluate instruction-tuned LLMs (i.e., chat models instead of base models) for their zero-shot performance on reasoning and knowledge heavy tasks. More results on [WildBench](https://huggingface.co/spaces/allenai/WildBench) are coming soon. 
+We release the following two models that are built on top of the strong [google/gemma-2-9b-it](https://huggingface.co/google/gemma-2-9b-it) model by training DPO and SimPO on the on-policy dataset [princeton-nlp/gemma2-ultrafeedback-armorm](https://huggingface.co/datasets/princeton-nlp/gemma2-ultrafeedback-armorm). For GSM and MMLU, we use the [ZeroEval](https://github.com/yuchenlin/ZeroEval) repository which aims to evaluate instruction-tuned LLMs (i.e., chat models instead of base models) for their zero-shot performance on reasoning and knowledge heavy tasks. More results on [WildBench](https://huggingface.co/spaces/allenai/WildBench) are coming soon. 
 
 |               models                    | AE2 LC | AE2 WR | AE2 Length |  AH  | AH Length |  GSM | GSM Length | MMLU | MMLU Length |
 |-----------------------------------|:------:|:------:|:----------:|:----:|:---------:|:----:|:----------:|:----:|:-----------:|
