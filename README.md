@@ -5,6 +5,10 @@ This repository contains the code and released models for our paper [SimPO: Simp
 <img src="./SimPO.png" width="1000px"></img>
 
 ## 🆕 Changelog 
+- **[2024.10.12]** To facilitate reproducibility, we release the training curves for Llama3-Instruct and Gemma2-IT:
+  - [Llama3-Instruct-SimPO](https://wandb.ai/yumeng0818/simpo/runs/zoesxyuj)
+  - [Llama3-Instruct-SimPO v0.2](https://wandb.ai/yumeng0818/simpo/runs/zvv56fcj)
+  - [Gemma2-IT-SimPO](https://wandb.ai/yumeng0818/simpo/runs/4w25j650)
 - **[2024.07.17]** We released a new SimPO model [gemma-2-9b-it-SimPO](https://huggingface.co/princeton-nlp/gemma-2-9b-it-SimPO) by fine-tuning Google's gemma-2 9B model using on-policy [UltraFeedback data](https://huggingface.co/datasets/princeton-nlp/gemma2-ultrafeedback-armorm) annotated by [ArmoRM](https://huggingface.co/RLHFlow/ArmoRM-Llama3-8B-v0.1), achieving a **72.4** LC win rate on AlpacaEval 2 (**#[1 on the Leaderboard](https://tatsu-lab.github.io/alpaca_eval/)** 🎉🎉) and a **59.1** win rate on Arena-Hard! Please find the training script [here](https://github.com/princeton-nlp/SimPO/blob/main/training_configs/gemma-2-9b-it-simpo.yaml) and the data generation scripts [here](https://github.com/princeton-nlp/SimPO/tree/main/on_policy_data_gen)!
 - **[2024.07.08]** We updated our paper ([v2](https://arxiv.org/abs/2405.14734v2))
   - Additional baselines (RRHF, SLiC-HF, CPO) 
@@ -29,7 +33,7 @@ Given the various inquiries about SimPO, we provide a list of tips to help you r
 We provide an [environment file](https://github.com/princeton-nlp/SimPO/blob/main/environment.yml) including the python package versions we used in our experiments. For optimal reproducibility, we recommend using the same package versions. However, please note that results may still vary due to differences in hardware configurations and CUDA versions, etc.
 
 ### Hyperparameter tuning
-Hyperparameter tuning is crucial for SimPO (and other preference optimization algorithms in general). The three main hyperparameters of SimPO to focus on are `learning_rate`, `beta`, and `gamma`.
+Hyperparameter tuning is crucial for SimPO (and other preference optimization algorithms in general). The three main hyperparameters of SimPO to focus on are `learning_rate`, `beta`, and `gamma` (we recommend keeping the total batch size fixed at 128).
 - `learning_rate`: It is the most critical hyperparameter for preference optimization. A large learning rate (e.g., 1e-5) can significantly degrade performance, causing the model to produce incoherent sentences or completely repetitive responses. We recommend grid searching over 3e-7, 5e-7, 8e-7, and 1e-6, if resources allow. **We find that a smaller learning rate (e.g., 5e-7) is more suitable for reasoning intensive domains like math for both DPO and SimPO.**
 - `beta`: Beta controls the reward scaling between winning and losing responses. SimPO requires a much larger `beta` than DPO. In our preprint, we used a beta of `2.0` or `2.5`, but in many cases, an even larger beta (e.g., `10`) could yield better results.
 - `gamma`: Gamma controls the target reward margin. We suggest tuning the ratio of gamma to beta (i.e., `gamma / beta`). We recommend using `0.5` as a starting point for `gamma_beta_ratio` and grid searching between `0` and `1`. A well-tuned `gamma_beta_ratio` can provide a modest improvement, but it is not as critical as other hyperparameters.
