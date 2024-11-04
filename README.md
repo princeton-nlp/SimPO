@@ -221,10 +221,10 @@ If you have any questions related to the code or the paper, feel free to email Y
 Please cite our paper if you find the repo helpful in your work:
 
 ```bibtex
-@article{meng2024simpo,
-  title={{SimPO}: Simple Preference Optimization with a Reference-Free Reward},
-  author={Meng, Yu and Xia, Mengzhou and Chen, Danqi},
-  journal={arXiv preprint arXiv:2405.14734},
-  year={2024}
+@inproceedings{meng2024simpo,
+   title={SimPO: Simple Preference Optimization with a Reference-Free Reward},
+   author={Meng, Yu and Xia, Mengzhou and Chen, Danqi},
+   booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+   year={2024}
 }
 ```
